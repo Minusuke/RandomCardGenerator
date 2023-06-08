@@ -4,7 +4,7 @@ body {
 ​ .contenido {
   display: inline-flex;
 }
-​ .carta {
+​ .card {
   width: 50px;
   height: 70px;
   background-color: white;
@@ -12,7 +12,7 @@ body {
   margin: 4px;
   box-shadow: 1px 1px 2px black;
 }
-​ .carta .numero {
+​ .card .number {
   width: 50px;
   height: 70px;
   background-color: white;
@@ -25,40 +25,40 @@ body {
   padding: 2px;
   box-sizing: border-box;
 }
-​ .carta .spades::before {
+​ .card .spades::before {
   content: "\2660";
   display: flex;
   align-items: flex-start;
   width: 100%;
 }
-​ .carta .spades::after {
+​ .card .spades::after {
   content: "\2660";
   display: flex;
   align-items: flex-start;
   width: 100%;
   transform: rotate(180deg);
 }
-​ .carta .clubs::before {
+​ .card .clubs::before {
   content: "\2663";
   display: flex;
   align-items: flex-start;
   width: 100%;
 }
-​ .carta .clubs::after {
+​ .card.clubs::after {
   content: "\2663";
   display: flex;
   align-items: flex-start;
   width: 100%;
   transform: rotate(180deg);
 }
-​ .carta .hearts::before {
+​ .card .hearts::before {
   content: "\2665";
   display: flex;
   align-items: flex-start;
   width: 100%;
   color: red;
 }
-​ .carta .hearts::after {
+​ .card .hearts::after {
   content: "\2665";
   display: flex;
   align-items: flex-start;
@@ -66,14 +66,14 @@ body {
   transform: rotate(180deg);
   color: red;
 }
-​ .carta .diams::before {
+​ .card .diams::before {
   content: "\2666";
   display: flex;
   align-items: flex-start;
   width: 100%;
   color: red;
 }
-​ .carta .diams::after {
+​ .card .diams::after {
   content: "\2666";
   display: flex;
   align-items: flex-start;
