@@ -4,42 +4,41 @@ import "./style.css";
 
 window.onload = function() {
   //write your code here
+  // Definir los posibles valores y pintas de las cartas
+  const values = [
+    "A",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "J",
+    "Q",
+    "K"
+  ];
+  const suits = ["♠", "♥", "♦", "♣"];
 
-  function randomNumber() {
-    let numbers = [
-      "A",
-      "1",
-      "2",
-      "3",
-      "4",
-      "5",
-      "6",
-      "7",
-      "8",
-      "9",
-      "J",
-      "Q",
-      "K"
-    ];
-    let indexNumber = Math.floor(Math.random() * numbers.length);
-    return numbers[indexNumber];
+  // Obtener una carta aleatoria
+  function getRandomCard() {
+    const randomValue = values[Math.floor(Math.random() * values.length)];
+    const randomSuit = suits[Math.floor(Math.random() * suits.length)];
+    return randomValue + randomSuit;
   }
-  function randomSuit() {
-    let suits = ["♦", "♥", "♠", "♣"];
-    let indexSuit = Math.floor(Math.random() * suits.length);
-
-    if (suits[indexSuit] === "♦" || suits[indexSuit] === "♥") {
-      suits[indexSuit] = `<span style="color: red;">${suits[indexSuit]}</span>`;
-    }
-
-    return suits[indexSuit];
+  // Actualizar la carta mostrada en la página
+  function updateCard() {
+    const cardElement = document.getElementById("card");
+    cardElement.innerHTML = getRandomCard();
   }
-  let finalNumber = randomNumber();
-  document.querySelector(".number").innerHTML = finalNumber;
+  // Obtener referencia al botón
+  const changeButton = document.getElementById("changeButton");
 
-  let palos = randomSuit();
-  document.querySelector(".card-top").innerHTML = palos;
-  document.querySelector(".card-bottom").innerHTML = palos;
+  // Cambiar la carta cuando se hace clic en el botón
+  changeButton.addEventListener("click", updateCard);
 
-  var boton = document.getElementById("miBoton");
+  // Actualizar la carta cuando se carga la página
+  window.onload = updateCard;
 };

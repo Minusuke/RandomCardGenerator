@@ -3,23 +3,30 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Random card</title>
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-    <link rel="shortcut icon" href="./4geeks.ico" />
+    <title>Random card Generator</title>
+    <style>
+      body {
+        background-color: green;
+      }
+
+      #card {
+        background-color: white;
+        width: 200px;
+        height: 300px;
+        margin: 50px auto;
+        padding: 10px;
+        text-align: center;
+        font-size: 24px;
+      }
+    </style>
+    <link rel="stylesheet" src="style.css" />
   </head>
-  <body class="bg-success">
-    <div class="container-fluid">
-      <div class="card">
-        <div class="card-top">♥</div>
-        <div class="number">7</div>
-        <div class="card-bottom">♥</div>
-      </div>
-      <button id="miBoton">Haz clic</button>
+  <body>
+    <div id="card">
+      ♥ 2 ♥
     </div>
+    <button id="changeButton">Cambiar Carta</button>
+
+    <script src="app.js"></script>
   </body>
 </html>
