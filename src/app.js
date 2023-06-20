@@ -1,44 +1,73 @@
 /* eslint-disable */
-
+import "bootstrap";
 import "./style.css";
 
+import "./assets/img/rigo-baby.jpg";
+import "./assets/img/4geeks.ico";
+
+const palos = ["corazon", "diamante", "pica", "trebol"];
+const valores = [
+  "A",
+  "2",
+  "3",
+  "4",
+  "5",
+  "6",
+  "7",
+  "8",
+  "9",
+  "10",
+  "J",
+  "Q",
+  "K"
+];
+let paloArriba = document.querySelector("#simboloArriba");
+let numero = document.querySelector("#numero");
+let paloAbajo = document.querySelector("#simboloAbajo");
+
+function eleccionCarta(arr1, arr2) {
+  let carta = [];
+  carta.push(arr1[Math.floor(Math.random() * arr1.length)]);
+  carta.push(arr2[Math.floor(Math.random() * arr2.length)]);
+  return carta;
+}
+function asignarColor(arr) {
+  if (arr[0] === "corazon" || arr[0] === "diamante") {
+    paloArriba.style.color = "red";
+    numero.style.color = "red";
+    paloAbajo.style.color = "red";
+  } else {
+    paloArriba.style.color = "black";
+    numero.style.color = "black";
+    paloAbajo.style.color = "black";
+  }
+}
+function asignarPalo(arr) {
+  if (arr[0] === "corazon") {
+    paloArriba.innerHTML = "♥";
+    paloAbajo.innerHTML = "♥";
+  } else if (arr[0] === "diamante") {
+    paloArriba.innerHTML = "♦";
+    paloAbajo.innerHTML = "♦";
+  } else if (arr[0] === "trebol") {
+    paloArriba.innerHTML = "♣";
+    paloAbajo.innerHTML = "♣";
+  } else {
+    paloArriba.innerHTML = "♠";
+    paloAbajo.innerHTML = "♠";
+  }
+}
+function asignarValor(arr) {
+  numero.innerHTML = arr[1];
+}
+function generacionCarta() {
+  let carta = eleccionCarta(palos, valores);
+  asignarColor(carta);
+  asignarPalo(carta);
+  asignarValor(carta);
+}
+
 window.onload = function() {
-  //write your code here
-  // Definir los posibles valores y pintas de las cartas
-  const values = [
-    "A",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "J",
-    "Q",
-    "K"
-  ];
-  const suits = ["♠", "♥", "♦", "♣"];
-
-  // Obtener una carta aleatoria
-  function getRandomCard() {
-    const randomValue = values[Math.floor(Math.random() * values.length)];
-    const randomSuit = suits[Math.floor(Math.random() * suits.length)];
-    return randomValue + randomSuit;
-  }
-  // Actualizar la carta mostrada en la página
-  function updateCard() {
-    const cardElement = document.getElementById("card");
-    cardElement.innerHTML = getRandomCard();
-  }
-  // Obtener referencia al botón
-  const changeButton = document.getElementById("changeButton");
-
-  // Cambiar la carta cuando se hace clic en el botón
-  changeButton.addEventListener("click", updateCard);
-
-  // Actualizar la carta cuando se carga la página
-  window.onload = updateCard;
+  generacionCarta();
 };
+document.querySelector(".boton").addEventListener("click", generacionCarta);

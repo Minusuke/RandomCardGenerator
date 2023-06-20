@@ -1,83 +1,58 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~bootstrap/dist/css/bootstrap.min.css";
+
 body {
-  background-color: green;
+  background-color: #0e7e12;
 }
-​ .contenido {
-  display: inline-flex;
+
+#carta {
+  width: 300px;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  margin: 5% auto;
 }
-​ .card {
-  width: 50px;
-  height: 70px;
-  background-color: white;
-  border-radius: 10px;
-  margin: 4px;
-  box-shadow: 1px 1px 2px black;
-}
-​ .card .number {
-  width: 50px;
-  height: 70px;
-  background-color: white;
-  border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.3rem;
-  flex-direction: column;
-  padding: 2px;
-  box-sizing: border-box;
-}
-​ .card .spades::before {
-  content: "\2660";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-}
-​ .card .spades::after {
-  content: "\2660";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  transform: rotate(180deg);
-}
-​ .card .clubs::before {
-  content: "\2663";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-}
-​ .card.clubs::after {
-  content: "\2663";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  transform: rotate(180deg);
-}
-​ .card .hearts::before {
-  content: "\2665";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
+
+#simboloArriba {
+  display: inline-block;
+  position: relative;
+  left: 10px;
   color: red;
+  font-size: 100px;
+  width: 60px;
+  height: 100px;
 }
-​ .card .hearts::after {
-  content: "\2665";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  transform: rotate(180deg);
-  color: red;
+
+#numero {
+  color: white;
+  font-size: 120px;
+  width: 120px;
+  margin: 50px auto;
+  text-align: center;
 }
-​ .card .diams::before {
-  content: "\2666";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
+
+#simboloAbajo {
+  float: right;
+  position: relative;
+  right: 10px;
+  bottom: -15px;
   color: red;
+  font-size: 100px;
+  width: 60px;
+  height: 100px;
+  transform: rotate(-180deg);
 }
-​ .card .diams::after {
-  content: "\2666";
-  display: flex;
-  align-items: flex-start;
-  width: 100%;
-  transform: rotate(180deg);
-  color: red;
+
+#boton-nueva {
+  margin: auto;
+  width: 300px;
+  text-align: center;
+}
+
+.boton {
+  width: 150px;
+  font-size: 22px;
+  border-radius: 5px;
+  font-family: "Josefin Sans", sans-serif;
+  padding: 5px;
 }
